@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Fragment } from '@stencil/core';
 
 @Component({
   tag: 'inventory-icon',
@@ -8,21 +8,14 @@ import { Component, Prop, h } from '@stencil/core';
 export class InventoryIcon {
   @Prop() src: string = '';
   @Prop() alt: string = '';
-  @Prop() glow: string = '';
   @Prop() outline: boolean = false;
 
   render() {
     return (
-      <div
-        class={{
-          'icon': true,
-          'icon--outline': this.outline,
-          [`icon--glow-${this.glow}`]: !this.outline,
-        }}
-      >
+      <Fragment>
         {this.outline ? <span class="icon__locked">?</span> : 
         <img src={this.src} alt={this.alt} class="icon__image"/>}
-      </div>
+      </Fragment>
     );
   }
 }
