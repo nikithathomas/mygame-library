@@ -6,10 +6,11 @@ const meta = {
   component: InventoryIcon,
   title: 'My Game Library/Atoms/InventoryIcon', // 👈 Creates a "Design System" folder -> "Atoms" subfolder
   argTypes: {
-    glow: {
+    src: {
       control: 'select',
-      options: ['cyan', 'amber', 'red'],
+      options: ['./raw-materials/sodium.webp'],
     },
+    alt: { control: 'text' },
     outline: { control: 'boolean' },
   },
 } satisfies Meta<InventoryIcon>;
@@ -20,7 +21,6 @@ export const DefaultInventoryIcon: StoryObj = {
   args: {
     src: '',
     alt: 'Carbon',
-    glow: 'cyan',
     outline: false,
   },
 };
