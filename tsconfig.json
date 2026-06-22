@@ -16,12 +16,13 @@
     "rootDir": "./",
     "jsx": "react",
     "jsxFactory": "h",
-    "jsxFragmentFactory": "h.Fragment",
+    "jsxFragmentFactory": "Fragment",
   },
   "include": [
     "src"
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  
 }
