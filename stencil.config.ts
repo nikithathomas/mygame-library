@@ -4,7 +4,7 @@ import { sass } from '@stencil/sass';
 export const config: Config = {
   namespace: 'mygame-library',
   plugins: [
-    sass() // 2. Add it to the plugins array
+    sass() // Adding the sass plugin to compile sass files
   ],
   outputTargets: [
     {
