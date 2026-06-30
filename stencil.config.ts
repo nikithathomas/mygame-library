@@ -3,6 +3,7 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'mygame-library',
+  globalStyle: 'src/global/global.scss',
   plugins: [
     sass() // Adding the sass plugin to compile sass files
   ],

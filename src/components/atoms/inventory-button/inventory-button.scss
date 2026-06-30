@@ -1,0 +1,70 @@
+@use '../../../global/design-system' as ds;
+
+.button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    // added variant styles here to control themes for each component
+    &--header {
+        padding: 1.2rem 1.6rem; // Fixed identical padding for both states to prevent layout shifts!
+        font-family: 'Segoe UI', Roboto, sans-serif;
+        font-weight: 600;
+        font-size: 0.85rem;
+        letter-spacing: 0.18em;
+        position: relative;
+        overflow: hidden; // Clips the futuristic lighting sweep
+
+        // Base/Inactive States
+        color: ds.$mygame-tab-inactive-txt;
+        background-color: ds.$mygame-tab-inactive-bg;
+
+        // Premium transition settings: Use cubic-bezier for snappy, snappy gaming responses!
+        transition:
+            color 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+            background-color 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+            transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); // Slight pop-out bounce!
+
+        // Game Subtle Hover Effect
+        &:hover {
+            color: rgba(255, 255, 255, 0.85);
+            background-color: rgba(82, 30, 23, 0.8);
+            transform: translateY(-1px); // Subtle lift
+        }
+
+        // 🚀 Selected / Active State
+        &-selected {
+            background-color: ds.$mygame-tab-active-bg;
+            color: ds.$mygame-tab-active-txt;
+            transform: scale(1.04) translateY(-2px); // Uses transform instead of padding! No layout shift.
+            z-index: 2; // Brings the active tab slightly above others
+
+            // Neon Text Glow Overlay
+            text-shadow:
+                0 0 4px rgba(255, 255, 255, 0.6),
+                0 0 12px rgba(214, 45, 22, 0.5); // Radiates the main theme red color
+
+            // Triggers the background shine sweep animation on click!
+            &::before {
+                animation: nms-sweep 0.45s ease-out forwards;
+            }
+        }
+
+        // The Light-Slice Sweep Overlay Effect ⚡
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%; // Hidden outside the container boundary
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.25) 50%,
+                    transparent);
+            transform: skewX(-25deg); // Angled sci-fi flare lines
+            pointer-events: none;
+        }
+    }
+}

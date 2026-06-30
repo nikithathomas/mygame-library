@@ -1,0 +1,14 @@
+html {
+    // 🚀 Establishes 1rem = 16px as the baseline grid standard
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    font-size: 1rem;
+    line-height: 1.5;
+}

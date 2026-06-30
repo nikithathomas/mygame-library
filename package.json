@@ -32,6 +32,7 @@
     "loader/"
   ],
   "scripts": {
+    "clean": "rm -rf .stencil dist node_modules/.vite",
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil-test --prod",
@@ -42,7 +43,6 @@
   "devDependencies": {
     "@stencil/core": "^4.43.5",
     "@stencil/sass": "^3.2.3",
-    "@stencil/storybook-plugin": "^0.7.0",
     "@stencil/vitest": "^1.13.2",
     "@storybook/addon-docs": "^10.4.6",
     "@storybook/addon-links": "^10.4.6",
